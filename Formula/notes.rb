@@ -8,10 +8,11 @@ class Notes < Formula
   end
   
   def install
-    system "./install.sh"
-  end
-  
-  def uninstall
-    system "./uninstall.sh"
+    bin.mkpath
+    bin.install "notes.sh", "notes"
+    bin.install "daemon_notes.sh", "daemon_notes"
+    mkdir_p share/"notes_data"
+    mv "style.css", share/"notes_data"
+    mv "template.html", share/"template.html"
   end
 end
