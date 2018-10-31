@@ -8,7 +8,6 @@ class Notes < Formula
   end
   
   def install
-    bin.mkpath
     bin.install "notes.sh"
     bin.install "daemon_notes.sh"
     mv bin/"notes.sh", bin/"notes"
