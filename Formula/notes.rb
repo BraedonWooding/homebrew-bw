@@ -1,10 +1,22 @@
+class RevealSub < Formula
+  head "https://github.com/hakimel/reveal.js.git"
+
+  head do
+    url "https://github.com/hakimel/reveal.js.git"
+  end
+  
+  def install
+    mkdir_p share/"reveal"
+    share.reveal.install Dir["reveal.js/*"]
+  end
+end
+
 class Notes < Formula
   desc "A simple note converting application"
   head "https://github.com/BraedonWooding/notes.git"
 
   head do
     url "https://github.com/BraedonWooding/notes.git"
-    url "https://github.com/hakimel/reveal.js.git"
     depends_on "pandoc" => :build
   end
   
@@ -18,7 +30,6 @@ class Notes < Formula
     mv "template.html", share/"notes_data"
     mv "config.cfg", share/"notes_data"
     mv "reveal_template.html", share/"notes_data"
-    mkdir_p share/"reveal"
-    share.reveal.install Dir["reveal.js/*"]
+    RevealSub.new.brew install
   end
 end
