@@ -4,11 +4,6 @@ class RevealSub < Formula
   head do
     url "https://github.com/hakimel/reveal.js.git"
   end
-  
-  def install
-    mkdir_p share/"reveal"
-    share.reveal.install Dir["reveal.js/*"]
-  end
 end
 
 class Notes < Formula
@@ -31,6 +26,9 @@ class Notes < Formula
     mv "config.cfg", share/"notes_data"
     mv "reveal_template.html", share/"notes_data"
     mv "convHead.hs", share/"notes_data"
-    RevealSub.new.brew install
+    RevealSub.new.brew do
+      mkdir_p share/"reveal"
+      share.reveal.install Dir["reveal.js/*"]
+    end
   end
 end
