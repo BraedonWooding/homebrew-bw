@@ -4,7 +4,7 @@ class Notes < Formula
 
   head do
     url "https://github.com/BraedonWooding/notes.git"
-    url https://github.com/hakimel/reveal.js.git
+    url "https://github.com/hakimel/reveal.js.git"
     depends_on "pandoc" => :build
   end
   
