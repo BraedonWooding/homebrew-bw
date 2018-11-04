@@ -1,9 +1,5 @@
 class RevealSub < Formula
-  head "https://github.com/hakimel/reveal.js.git"
-
-  head do
-    url "https://github.com/hakimel/reveal.js.git"
-  end
+  url "https://github.com/hakimel/reveal.js.git"
 end
 
 class Notes < Formula
