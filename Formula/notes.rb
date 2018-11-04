@@ -22,7 +22,7 @@ class Notes < Formula
     mv "config.cfg", share/"notes_data"
     mv "reveal_template.html", share/"notes_data"
     mv "convHead.hs", share/"notes_data"
-    mkdir_p reveal
-    resource("reveal").stage { reveal.install Dir["reveal.js/*"] }
+    mkdir_p share/"reveal"
+    resource("reveal").stage { (share/"reveal").install Dir["reveal.js/*"] }
   end
 end
