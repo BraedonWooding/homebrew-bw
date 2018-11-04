@@ -7,10 +7,6 @@ class Notes < Formula
     depends_on "pandoc" => :build
   end
   
-  resource "reveal" do
-    url "https://github.com/hakimel/reveal.js.git"
-  end
-  
   def install
     bin.install "notes.sh"
     bin.install "daemon_notes.sh"
@@ -20,9 +16,5 @@ class Notes < Formula
     mv "style.css", share/"notes_data"
     mv "template.html", share/"notes_data"
     mv "config.cfg", share/"notes_data"
-    mv "reveal_template.html", share/"notes_data"
-    mv "convHead.hs", share/"notes_data"
-    mkdir_p share/"reveal"
-    resource("reveal").stage { mv Dir["reveal.js/*"], share/"reveal" }
   end
 end
