@@ -30,7 +30,7 @@ class Notes < Formula
     mv "template.html", share/"notes_data"
     mv "config.cfg", share/"notes_data"
     mv "reveal_template.html", share/"notes_data"
-    mv "convHead.hs", share/"convHead.hs"
+    mv "convHead.hs", share/"notes_data"
     RevealSub.new.brew install
   end
 end
