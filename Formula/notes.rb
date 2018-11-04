@@ -15,5 +15,6 @@ class Notes < Formula
     mkdir_p share/"notes_data"
     mv "style.css", share/"notes_data"
     mv "template.html", share/"template.html"
+    mv "config.cfg", share/"config.cfg"
   end
 end
