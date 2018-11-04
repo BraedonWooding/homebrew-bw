@@ -14,7 +14,7 @@ class Notes < Formula
     mv bin/"daemon_notes.sh", bin/"daemon_notes"
     mkdir_p share/"notes_data"
     mv "style.css", share/"notes_data"
-    mv "template.html", share/"template.html"
-    mv "config.cfg", share/"config.cfg"
+    mv "template.html", share/"notes_data"
+    mv "config.cfg", share/"notes_data"
   end
 end
